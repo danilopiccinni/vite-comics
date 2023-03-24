@@ -3,9 +3,6 @@
     export default {
         data() {
             return {
-
-
-
                 columns :[
                     {
                         head : 'dc comics',
@@ -62,6 +59,7 @@
 </script>
 
 <template>
+
     <footer>
         <div class="footer-sx">
             
@@ -78,10 +76,11 @@
         </div>
 
         <div class="logo">
-            <!-- <img src="/img/dc-logo-bg.png" alt=""> -->
+
         </div>
 
     </footer>
+    
 </template>
 
 <style scoped lang="scss">
@@ -90,10 +89,9 @@
         display: flex;
         justify-content: space-between;
 
-        height: 300px;
+        height: 400px;
 
-
-        padding: 0px 100px;
+        padding: 0 100px;
 
         background-image: url(/img/footer-bg.jpg);
         background-repeat: no-repeat;
@@ -116,14 +114,22 @@
             span {
                 text-transform: uppercase;
                 color: white;
-                font-size: 15px;
+                font-size: 20px;
+                font-weight: bold;
                 margin-bottom: 10px;
 
             }
 
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+                margin-bottom: 10px;
+            }
+
             li {
                 color: #959595;
-                font-size: 10px;
+                font-size: 15px;
 
             }
 
@@ -135,15 +141,7 @@
             background-image: url(/img/dc-logo-bg.png);
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 80%;
-
-
-            img {
-                width: 500px;
-
-
-            }
-
+            background-size: 100%;
         }
     }
 
