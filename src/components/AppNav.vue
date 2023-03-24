@@ -69,7 +69,7 @@
 
         img {
 
-            width: 90%;
+            width: 80px;
 
             &:hover {
                 cursor: pointer;
@@ -79,6 +79,7 @@
         ul {
             
             display: flex;
+            flex-wrap: wrap;
             
             li {
                 font-weight: bold;
