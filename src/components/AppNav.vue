@@ -15,7 +15,9 @@
                     'fans',
                     'news',
                     'shop',
-                ]
+                ],
+
+                activeIndex: 0,
             }
         }
     }
@@ -25,13 +27,13 @@
 
     <nav>
 
-        <div>
+        <div class="logo">
             <img :src="logo" alt="">
         </div>
 
         <div>
             <ul>
-                <li v-for="link in links">
+                <li v-for="(link , index) in links" @click="activeIndex=index" :class=" index == activeIndex ? 'active' : ''">
                     {{ link }}
                 </li>
             </ul>
@@ -44,19 +46,50 @@
 
 <style scoped lang="scss">
 
+    .active::before {
+        content: "";
+        width: 50%;
+        height: 5px;
+        background-color: #0282f9;
+
+        position: absolute;
+        bottom: 3px;
+        right: 50%;
+        translate: 50% 50%;
+                    
+                }
+    
+
     nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 25px 100px;
+        padding-left: 100px;
+        padding-right: 100px;
+
+        img {
+
+            width: 90%;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
 
         ul {
             
             display: flex;
             
             li {
+                font-weight: bold;
                 text-transform: uppercase;
-                padding: 15px 15px;
+                padding: 50px 15px;
+                position: relative;
+
+                &:hover{
+                    background-color: #0282f93d;
+                    cursor: pointer;
+                }
             }
         }
         
