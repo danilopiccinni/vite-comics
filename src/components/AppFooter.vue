@@ -78,7 +78,7 @@
         </div>
 
         <div class="logo">
-            <img src="/img/dc-logo-bg.png" alt="">
+            <!-- <img src="/img/dc-logo-bg.png" alt=""> -->
         </div>
 
     </footer>
@@ -90,8 +90,10 @@
         display: flex;
         justify-content: space-between;
 
+        height: 300px;
 
-        padding: 25px 100px;
+
+        padding: 0px 100px;
 
         background-image: url(/img/footer-bg.jpg);
         background-repeat: no-repeat;
@@ -100,29 +102,46 @@
 
         .footer-sx {
             display: flex;
-            gap: 50px;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 25px 0;
         }
         .column {
             display: flex;
             flex-direction: column;
+            margin-right: 10px;
+
 
             span {
                 text-transform: uppercase;
                 color: white;
                 font-size: 15px;
+                margin-bottom: 10px;
+
             }
 
             li {
                 color: #959595;
                 font-size: 10px;
+
             }
 
         }
 
         .logo { 
+            width: 600px;
+            height: 100%;
+            background-image: url(/img/dc-logo-bg.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 80%;
+
 
             img {
-                width: 200px;
+                width: 500px;
+
+
             }
 
         }
