@@ -20,7 +20,7 @@
                         title : 'comic shop locator'
                     },
                     {
-                        image : '/img/buy-dc-power-visa.svg',
+                        image : '/img/buy-dc-power-visa.png',
                         title : 'dc power visa'
                     },
 
@@ -60,19 +60,19 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-
+        
         div {
             display: flex;
             align-items: center;
             gap: 12px;
-
 
             span {
                 color: white;
             }
 
             img {
-                width: 50px;
+                max-width: 50%;
+                max-height: 50px;
             }
         }
     }
