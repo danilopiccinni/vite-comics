@@ -3,9 +3,11 @@
     export default {
         data() {
             return {
+                
                 columns :[
                     {
                         head : 'dc comics',
+
                         links : [
                             'Characters',
                             'Comics',
@@ -19,6 +21,7 @@
 
                     {
                         head : 'shop',
+
                         links : [
                             'Shop DC',
                             'Shop DC Collectibles',
@@ -27,6 +30,7 @@
 
                     {
                         head : 'dc',
+
                         links : [
                             'Therms Of Use',
                             'Privacy policy (New)',
@@ -44,6 +48,7 @@
 
                     {
                         head : 'sites',
+
                         links : [
                             'DC',
                             'MAD Magazine',
@@ -59,33 +64,35 @@
 </script>
 
 <template>
-
-    <footer>
-        <div class="footer-sx">
-            
+    <!-- footer -->
+    <footer class="footer">
+        <!-- contenitore sinistro del footer -->
+        <div class="cont-links">
+            <!-- contenitore creato con il v-for per ogni oggetto('column') nell'array di 'columns'  -->
             <div v-for="column in columns" class="column">
-                <span>{{ column.head }}</span>
-                <ul>
-                    <li v-for="link in column.links">
+                <!-- titolo dell'oggetto corrente ('column') -->
+                <span class="link-title">{{ column.head }}</span>
+                <!-- lista dei link riferita all'oggetto corrente -->
+                <ul class="link-list">
+                    <!-- 'li' creato con il v-for che cicla l'array di link presente in ogni oggetto ('column')  presente in 'columns'(array primario che contiene i vari oggetti)-->
+                    <li v-for="link in column.links" class="link">
+                        <!-- visualizza quindi il link corrente -->
                         {{  link }}
                     </li>
                 </ul>
-    
             </div>
-
         </div>
-
+        
+        <!-- contenitore 'vuoto' creato per usare un background da visualizzare in modo particolare(gestita per lo piu' tramite lo style) -->
         <div class="logo">
-
+            <!-- lasciato vuoto perche serve la visualizazzione riguarda solo il background -->
         </div>
-
     </footer>
-    
 </template>
 
 <style scoped lang="scss">
 
-    footer {
+    .footer {
         display: flex;
         justify-content: space-between;
 
@@ -98,43 +105,36 @@
         background-size: cover;
 
 
-        .footer-sx {
+        .cont-links {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             gap: 10px;
+
             padding: 25px 0;
-        }
-        .column {
-            display: flex;
-            flex-direction: column;
-            margin-right: 10px;
-
-
-            span {
-                text-transform: uppercase;
-                color: white;
-                font-size: 20px;
-                font-weight: bold;
-                margin-bottom: 10px;
-
-            }
-
-            ul {
+            .column {
                 display: flex;
                 flex-direction: column;
-                gap: 3px;
-                margin-bottom: 10px;
+                margin-right: 10px;
+                .link-title {
+                    text-transform: uppercase;
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+                .link-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+                    margin-bottom: 10px;                
+                    .link {
+                        color: #959595;
+                        font-size: 15px;
+                    }
+                }
             }
-
-            li {
-                color: #959595;
-                font-size: 15px;
-
-            }
-
         }
-
         .logo { 
             width: 600px;
             height: 100%;
