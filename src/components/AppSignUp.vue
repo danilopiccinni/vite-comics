@@ -3,6 +3,7 @@
     export default {
         data() {
             return {
+
                 links : [
                     '/img/footer-facebook.png',
                     '/img/footer-twitter.png',
@@ -16,22 +17,27 @@
 </script>
 
 <template>
+    <!-- contenitore intera sezione -->
     <div class="container">
+        <!-- contenitore parte sinistra -->
         <div class="section-sx">
-            <button>SIGN-UP NOW!</button>
+            <!-- bottone 'sign-up' che serve all'utente ad accedere -->
+            <button class="button-sign-up">SIGN-UP NOW!</button>
         </div>
-        
+        <!-- contenitore parte destra -->
         <div class="section-dx">
-            <span>FOLLOW US</span>
-            <ul>
-                <li v-for="link in links">
-                    <img :src='link' alt="">
+            <!-- 'titolo' da visualizzare affianco alla lista dei link dedicati ai social -->
+            <span class="title-social">FOLLOW US</span>
+            <!-- lista dei link social -->
+            <ul class="social-list">
+                <!-- ciclo v-for che crea un 'li' per ogni link presente nell'array di link (links) -->
+                <li v-for="link in links" class="link">
+                    <!-- immagine del link corrente --- src gestito tramite vue (:src) assegnando il link corrispondente al link corrente -->
+                    <img :src='link' alt="" class="image-link">
                 </li>
             </ul>
         </div>   
     </div>
-        
-
 </template>
 
 <style scoped lang="scss">
@@ -44,9 +50,8 @@
         padding: 25px 100px;
 
         background-color: #303030;
-
         .section-sx {
-            button {
+            .button-sign-up {
                 border: 2px solid #0085ff;
                 padding: 0.5em;
                 background-color: transparent;
@@ -58,20 +63,14 @@
             display: flex;
             align-items: center;
             gap: 50px;
-
-            span {
+            .title-social {
                 color: #0085ff;
                 font-weight: bold;
             }
-
-            ul {
+            .social-list {
                 display: flex;
                 gap: 20px;
             }
         }
-
-
     }
-
-
 </style>
